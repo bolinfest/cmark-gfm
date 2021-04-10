@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GFM WASM Demo</title>
+    <style>
+      #markdown, #html {
+        width: 800px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+
+    This is a demo of <a href="https://github.com/github/cmark-gfm">https://github.com/github/cmark-gfm</a> compiled to WebAssembly.
+
+    <p>
+      <textarea id="markdown" placeholder="type your Markdown here"></textarea>
+    </p>
+
+    <p>
+      <textarea id="html" placeholder="HTML will appear here"></textarea>
+    </p>
+
+    <script src="cmark-gfm.js"></script>
+    <script src="test.js"></script>
+  </body>
+</html>
