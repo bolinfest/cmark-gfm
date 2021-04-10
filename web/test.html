@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GFM WASM Demo</title>
+    <style>
+      #markdown, #html {
+        width: 800px;
+        height: 400px;
+      }
+      #options {
+        width: 400px;
+      }
+      #page {
+        display: flex;
+        flex-direction: row;
+        width: 1300px;
+      }
+      #textareas {
+        width: 850px;
+      }
+      label {
+        color: #777;
+        font-family: Menlo, Monaco, "Courier New", monospace;
+      }
+      code {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+    This is a demo of <a href="https://github.com/github/cmark-gfm">https://github.com/github/cmark-gfm</a> compiled to WebAssembly.<br>
+    Code is on GitHub at <a href="https://github.com/bolinfest/cmark-gfm/commits/wasm-demo">https://github.com/bolinfest/cmark-gfm/commits/wasm-demo</a>.
+    </p>
+
+    <div id="page">
+
+    <div id="textareas">
+      <p>
+        <textarea id="markdown" placeholder="type your Markdown here"></textarea>
+      </p>
+
+      <p>
+        <textarea id="html" placeholder="HTML will appear here"></textarea>
+      </p>
+    </div>
+
+    <form id="options">
+      <p>
+        These are the <a href="https://github.com/github/cmark-gfm/blob/85d895289c5ab67f988ca659493a64abb5fec7b4/src/cmark-gfm.h#L673-L753">
+          options exposed in <code>cmark-gfm.h</code>:
+        </a>
+      </p>
+      <p>
+        Include a <code>data-sourcepos</code> attribute on all block elements.<br>
+        <label><input type="checkbox" id="CMARK_OPT_SOURCEPOS">OPT_SOURCEPOS</label>
+      </p>
+      <p>
+        Render <code>softbreak</code> elements as hard line breaks.<br>
+        <label><input type="checkbox" id="CMARK_OPT_HARDBREAKS">OPT_HARDBREAKS</label>
+      </p>
+      <p>
+        Render raw HTML and unsafe links (<code>javascript:</code>, <code>vbscript:</code>,
+        <code>file:</code>, and <code>data:</code>, except for <code>image/png</code>, <code>image/gif</code>,
+        <code>image/jpeg</code>, or <code>image/webp</code> mime types).  By default,
+        raw HTML is replaced by a placeholder HTML comment. Unsafe
+        links are replaced by empty strings.<br>
+        <label><input type="checkbox" id="CMARK_OPT_UNSAFE">OPT_UNSAFE</label>
+      </p>
+      <p>
+        Render <code>softbreak</code> elements as spaces.<br>
+        <label><input type="checkbox" id="CMARK_OPT_NOBREAKS">OPT_NOBREAKS</label>
+      </p>
+      <p>
+        Validate UTF-8 in the input before parsing, replacing illegal
+        sequences with the replacement character U+FFFD.<br>
+        <label><input type="checkbox" id="CMARK_OPT_VALIDATE_UTF8">OPT_VALIDATE_UTF8</label>
+      </p>
+      <p>
+        Convert straight quotes to curly, --- to em dashes, -- to en dashes.<br>
+        <label><input type="checkbox" id="CMARK_OPT_SMART">OPT_SMART</label>
+      </p>
+      <p>
+        Use GitHub-style <code>&lt;pre lang="x"></code> tags for code blocks instead of
+        <code>&lt;pre>&lt;code class="language-x"></code>.<br>
+        <label><input type="checkbox" id="CMARK_OPT_GITHUB_PRE_LANG">OPT_GITHUB_PRE_LANG</label>
+      </p>
+      <p>
+        Be liberal in interpreting inline HTML tags.<br>
+        <label><input type="checkbox" id="CMARK_OPT_LIBERAL_HTML_TAG">OPT_LIBERAL_HTML_TAG</label>
+      </p>
+      <p>
+        Parse footnotes.<br>
+        <label><input type="checkbox" id="CMARK_OPT_FOOTNOTES">OPT_FOOTNOTES</label>
+      </p>
+      <p>
+        Only parse strikethroughs if surrounded by exactly 2 tildes.
+        Gives some compatibility with redcarpet.<br>
+        <label><input type="checkbox" id="CMARK_OPT_STRIKETHROUGH_DOUBLE_TILDE">OPT_STRIKETHROUGH_DOUBLE_TILDE</label>
+      </p>
+      <p>
+        Use style attributes to align table cells instead of align attributes.<br>
+        <label><input type="checkbox" id="CMARK_OPT_TABLE_PREFER_STYLE_ATTRIBUTES">OPT_TABLE_PREFER_STYLE_ATTRIBUTES</label>
+      </p>
+      <p>
+        Include the remainder of the info string in code blocks in
+        a separate attribute.<br>
+        <label><input type="checkbox" id="CMARK_OPT_FULL_INFO_STRING">OPT_FULL_INFO_STRING</label>
+      </p>
+    </form>
+    </div>
+
+    <script src="cmark-gfm.js"></script>
+    <script src="test.js"></script>
+  </body>
+</html>
