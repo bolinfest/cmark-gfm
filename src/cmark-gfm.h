@@ -676,7 +676,8 @@ char *cmark_render_latex_with_mem(cmark_node *root, int options, int width, cmar
 
 /** Default options.
  */
-#define CMARK_OPT_DEFAULT 0
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_DEFAULT;
 
 /**
  * ### Options affecting rendering
@@ -684,17 +685,20 @@ char *cmark_render_latex_with_mem(cmark_node *root, int options, int width, cmar
 
 /** Include a `data-sourcepos` attribute on all block elements.
  */
-#define CMARK_OPT_SOURCEPOS (1 << 1)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_SOURCEPOS;
 
 /** Render `softbreak` elements as hard line breaks.
  */
-#define CMARK_OPT_HARDBREAKS (1 << 2)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_HARDBREAKS;
 
 /** `CMARK_OPT_SAFE` is defined here for API compatibility,
     but it no longer has any effect. "Safe" mode is now the default:
     set `CMARK_OPT_UNSAFE` to disable it.
  */
-#define CMARK_OPT_SAFE (1 << 3)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_SAFE;
 
 /** Render raw HTML and unsafe links (`javascript:`, `vbscript:`,
  * `file:`, and `data:`, except for `image/png`, `image/gif`,
@@ -702,11 +706,13 @@ char *cmark_render_latex_with_mem(cmark_node *root, int options, int width, cmar
  * raw HTML is replaced by a placeholder HTML comment. Unsafe
  * links are replaced by empty strings.
  */
-#define CMARK_OPT_UNSAFE (1 << 17)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_UNSAFE;
 
 /** Render `softbreak` elements as spaces.
  */
-#define CMARK_OPT_NOBREAKS (1 << 4)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_NOBREAKS;
 
 /**
  * ### Options affecting parsing
@@ -714,43 +720,52 @@ char *cmark_render_latex_with_mem(cmark_node *root, int options, int width, cmar
 
 /** Legacy option (no effect).
  */
-#define CMARK_OPT_NORMALIZE (1 << 8)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_NORMALIZE;
 
 /** Validate UTF-8 in the input before parsing, replacing illegal
  * sequences with the replacement character U+FFFD.
  */
-#define CMARK_OPT_VALIDATE_UTF8 (1 << 9)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_VALIDATE_UTF8;
 
 /** Convert straight quotes to curly, --- to em dashes, -- to en dashes.
  */
-#define CMARK_OPT_SMART (1 << 10)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_SMART;
 
 /** Use GitHub-style <pre lang="x"> tags for code blocks instead of <pre><code
  * class="language-x">.
  */
-#define CMARK_OPT_GITHUB_PRE_LANG (1 << 11)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_GITHUB_PRE_LANG;
 
 /** Be liberal in interpreting inline HTML tags.
  */
-#define CMARK_OPT_LIBERAL_HTML_TAG (1 << 12)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_LIBERAL_HTML_TAG;
 
 /** Parse footnotes.
  */
-#define CMARK_OPT_FOOTNOTES (1 << 13)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_FOOTNOTES;
 
 /** Only parse strikethroughs if surrounded by exactly 2 tildes.
  * Gives some compatibility with redcarpet.
  */
-#define CMARK_OPT_STRIKETHROUGH_DOUBLE_TILDE (1 << 14)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_STRIKETHROUGH_DOUBLE_TILDE;
 
 /** Use style attributes to align table cells instead of align attributes.
  */
-#define CMARK_OPT_TABLE_PREFER_STYLE_ATTRIBUTES (1 << 15)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_TABLE_PREFER_STYLE_ATTRIBUTES;
 
 /** Include the remainder of the info string in code blocks in
  * a separate attribute.
  */
-#define CMARK_OPT_FULL_INFO_STRING (1 << 16)
+CMARK_GFM_EXPORT
+extern const unsigned int CMARK_OPT_FULL_INFO_STRING;
 
 /**
  * ## Version information

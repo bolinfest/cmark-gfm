@@ -29,6 +29,7 @@ set(HEADERS
   )
 set(LIBRARY_SOURCES
   cmark.c
+  cmark-gfm.c
   node.c
   iterator.c
   blocks.c

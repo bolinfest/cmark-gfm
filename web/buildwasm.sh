@@ -28,6 +28,7 @@ set -x
 emcc \
   -Isrc \
   -Ibuild/src \
+  src/cmark-gfm.c \
   src/cmark.c \
   src/node.c \
   src/iterator.c \
